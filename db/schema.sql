@@ -23,7 +23,10 @@ CREATE TABLE employees (
     last_name: VARCHAR(30) NOT NULL,
     job_title: VARCHAR(30) NOT NULL,
     department: VARCHAR(30) NOT NULL,
-    FOREIGN KEY (job_title) REFERENCES (roles)(job_title)
-    FOREIGN KEY (department) REFERENCES (departments)(id)
+    salary: INT,
+    manager: VARCHAR(30) NOT NULL,
+    FOREIGN KEY (job_title) REFERENCES roles(job_title)
+    FOREIGN KEY (department) REFERENCES departments(id)
+    FOREIGN KEY (salary) REFERENCES roles(salary)
     ON DELETE SET NULL
 );

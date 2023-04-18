@@ -7,7 +7,7 @@ VALUES
 (005, "Operations"),
 (006, "Sales");
 
-INSERT INTO roles (id, job_title, salery, department)
+INSERT INTO roles (id, job_title, salary, department)
 VALUES
 (001, "Founder", "1,000,000," "Leadership"),
 (002, "Managing Partner", "300,000", "Leadership"),
@@ -26,7 +26,7 @@ VALUES
 (015, "Sous Chef", "80,000", "Chefs"),
 (016, "Pref Chef", "60,000", "Chefs");
 
-INSERT INTO employees (id, first_name, last_name, job_title, department, salery, manager)
+INSERT INTO employees (id, first_name, last_name, job_title, department, salary, manager)
 VALUES
 (001, "Marcia", "Selden", "Founder", "Leadership", "1,000,000"),
 (002, "Robin", "Selden", "Managing Partner", "Leadership", "300,000"),
