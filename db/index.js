@@ -1,6 +1,14 @@
 const connection = require("./connection");
 
 const database = {
+    
+    getAllDepartments() {
+        console.log('Getting all departments...')
+    return connection.promise().query('SELECT * FROM departments').then((result) => {
+
+    }).catch(err => console.error(err))
+},
+
     getAllEmployees() {
         console.log('Getting all employees...')
     return connection.promise().query('SELECT * FROM employees').then((result) => {
