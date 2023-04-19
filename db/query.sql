@@ -1,10 +1,13 @@
+--view all departments
 SELECT department_id, department_name
 FROM departments;
 
+--view all roles
 SELECT roles.role_id, roles.job_title, roles.salary, departments.department_name
 FROM roles;
 INNER JOIN departments ON roles.department_id = departments.department_id;
 
+--view all employees
 SELECT employees.employee_id, employees.first_name, employees.last_name, roles.job_title, departments.department_name, roles.salary, managers.managers_name 
 FROM employees;
 INNER JOIN roles ON employees.job_title = roles.job_title;
