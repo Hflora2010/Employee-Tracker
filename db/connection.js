@@ -8,7 +8,7 @@ const connection = mysql.createConnection({
     password: process.env.DB_PASSWORD,
     port: 3306,
     database: 'employee_tracker_db'    
-});
+}).promise();
 
 connection.connect((err) => err ? true : false);
 console.log(connection); 
