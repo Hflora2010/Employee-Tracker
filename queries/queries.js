@@ -2,29 +2,31 @@ const connection = require('../db/connection');
 
 
 //shows department data to the user
-async function viewAllDepartments() {
+async function viewAllDepartments(startApp) {
     try {
       const [rows] = await connection.query("SELECT * FROM department");
       console.table(rows);
       startApp();
     } catch (err) {
       console.error(err);
+      startApp();
     }
   }
 
 //shows role data to the user
-async function viewAllRoles() {
+async function viewAllRoles(startApp) {
     try {
         const [rows] = await connection.query("SELECT role.id, role.job_title, department.dpt_name AS department, role.salary FROM role JOIN department ON department.id = role.department_id");
         console.table(rows);
         startApp();
     } catch (err) {
         console.error(err);
+        startApp();
     }
 }    
 
 //shows employee data to the user
-async function viewAllEmployees() {
+async function viewAllEmployees(startApp) {
     try {
       const [rows] = await connection.query(`
         SELECT 

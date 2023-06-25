@@ -29,27 +29,28 @@ function startApp() {
     .then((answers) => {
       switch (answers.action) {
         case "View all departments":
-          viewAllDepartments();
+          viewAllDepartments(startApp);
           break;
         case "View all roles":
-          viewAllRoles();
+          viewAllRoles(startApp);
           break;
         case "View all employees":
-            viewAllEmployees();
+            viewAllEmployees(startApp);
             break;
         case "Add a department":
-            addDepartment();
+            addDepartment(startApp);
             break;
         case "Add a role":
-            addRole();
+            addRole(startApp);
             break;
         case "Add an employee":
-            addEmployee();
+            addEmployee(startApp);
             break;
         case "Update an employee":
-            updateEmployee();
+            updateEmployee(startApp);
             break;
         case "Exit":
+          console.log("Bye!");
           process.exit();
       }
     });
