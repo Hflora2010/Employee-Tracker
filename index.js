@@ -1,4 +1,4 @@
-const { inquirer } = require("inquirer");
+const inquirer = require("inquirer"); 
 const mysql = require("mysql");
 const connection = require("./db/connection");
 
@@ -28,7 +28,7 @@ function startApp() {
     ])
     .then((answers) => {
       switch (answers.action) {
-        case "View all Departments":
+        case "View all departments":
           viewAllDepartments();
           break;
         case "View all roles":
@@ -37,7 +37,7 @@ function startApp() {
         case "View all employees":
             viewAllEmployees();
             break;
-        case "Add a Department":
+        case "Add a department":
             addDepartment();
             break;
         case "Add a role":
@@ -54,17 +54,9 @@ function startApp() {
       }
     });
 }
-    startApp();
-    // function viewAllDepartments() {
-    //     const query = `SELECT * FROM department`;
-    //     connection.query(query, (err, res) => {
-    //         if (err) throw err;
-    //         console.log("All Departments");
-    //         console.table(res);
 
-    //         prompt();
-    //     });
-    // }
+startApp();
+
 
     // function viewAllRoles() {
     //         const query = `
