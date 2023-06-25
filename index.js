@@ -1,6 +1,6 @@
 const inquirer = require("inquirer"); 
-const mysql = require("mysql");
-const connection = require("./db/connection");
+// const mysql = require("mysql");
+// const connection = require("./db/connection");
 
 const { viewAllDepartments, viewAllRoles, viewAllEmployees } = require("./queries/queries");
 const { addEmployee, addRole, addDepartment } = require("./queries/addqueries");
@@ -56,19 +56,3 @@ function startApp() {
 }
 
 startApp();
-
-
-    // function viewAllRoles() {
-    //         const query = `
-    //           SELECT role.id, role.job_title, role.salary, department.dpt_name 
-    //           FROM role
-    //           INNER JOIN department ON role.department_id = department.id
-    //         `;
-    //         connection.query(query, (err, res) => {
-    //           if (err) throw err;
-    //           console.log('All Roles:');
-    //           console.table(res);
-
-    //           prompt();
-    //         });
-    //       }

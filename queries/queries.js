@@ -1,5 +1,7 @@
 const connection = require('../db/connection');
-    
+
+
+//shows department data to the user
 async function viewAllDepartments() {
     try {
       const [rows] = await connection.query("SELECT * FROM department");
@@ -10,7 +12,7 @@ async function viewAllDepartments() {
     }
   }
 
-
+//shows role data to the user
 async function viewAllRoles() {
     try {
         const [rows] = await connection.query("SELECT role.id, role.job_title, department.dpt_name AS department, role.salary FROM role JOIN department ON department.id = role.department_id");
@@ -21,6 +23,7 @@ async function viewAllRoles() {
     }
 }    
 
+//shows employee data to the user
 async function viewAllEmployees() {
     try {
       const [rows] = await connection.query(`
@@ -45,4 +48,24 @@ async function viewAllEmployees() {
     }
   }
 
-    module.exports = { viewAllDepartments, viewAllEmployees, viewAllRoles };
+
+
+  //gets all roles from the database
+  async function getRoles() {
+    const [rows] = await connection.query("SELECT * FROM role");
+    return rows;
+  }
+
+  //gets all employees from the database
+  async function getEmployees() {
+    const [rows] = await connection.query("SELECT * FROM employee");
+    return rows;
+  }
+
+  //gets all departments from the database
+  async function getDepartments() {
+    const [rows] = await connection.query("SELECT * FROM department");
+    return rows;
+  }
+
+    module.exports = { viewAllDepartments, viewAllEmployees, viewAllRoles, getRoles, getEmployees, getDepartments };
